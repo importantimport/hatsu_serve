@@ -8,7 +8,9 @@ Hatsu requires the target site to redirects `.well-known`.
 
 While you can do this by `_redirects`, `netlify.toml`, or `vercel.json`, Hatsu Serve can go further:
 
-> `hatsuServe({ from: new URL('https://example.com'), to: new URL('https://hatsu.local') })`
+> ```ts
+> hatsuServe({ from: new URL('https://example.com'), to: new URL('https://hatsu.local') })
+> ```
 
 - Automatically redirects `.well-known`
   - `https://example.com/.well-known/webfinger?resource=acct:example.com@example.com` => `https://hatsu.local/.well-known/webfinger?resource=acct:example.com@example.com`
