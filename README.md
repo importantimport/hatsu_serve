@@ -55,21 +55,17 @@ server.start()
 ```
 
 ```ts
-import { hatsuServe } from 'hatsu_serve/hono/middleware.ts'
+// serve.ts
 import { Hono } from 'hono'
+import { serveStatic } from 'hono/middleware.ts'
+import { hatsuServe } from 'hatsu_serve/hono/middleware.ts'
 
 const app = new Hono()
 
-// app.get('/.well-known/*', wellKnown())
-app.use(
-  '*',
-  hatsuServe({
-    from: new URL('https://example.com'),
-    to: new URL('https://hatsu.local'),
-  })
-)
+app.use('*', hatsuServe({ to: new URL('https://hatsu.local') }))
+app.get('*', serveStatic({ root: './dist' }))
 
-export default app
+Deno.serve(app.fetch, { port: 8000 })
 ```
 
 ### Node
