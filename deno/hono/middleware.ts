@@ -7,6 +7,10 @@ export interface Options {
 
 export const hatsuServe = (options: Options): MiddlewareHandler => {
   return async (ctx, next) => {
-    const url = new URL(ctx.req.url)
+    // const url = new URL(ctx.req.url)
+
+    await next()
   }
 }
+
+export default hatsuServe
