@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "hono/": "https://deno.land/x/hono@v3.0.0/",
+    "lume/": "https://deno.land/x/lume@v1.19.1/"
+  }
+}

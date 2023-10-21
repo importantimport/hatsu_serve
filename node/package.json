@@ -1,0 +1,10 @@
+{
+  "name": "@hatsu-serve/node",
+  "private": true,
+  "devDependencies": {
+    "@importantimport/eslint-config": "^0.2.0",
+    "@importantimport/eslint-config-ts": "^0.2.0",
+    "@importantimport/tsconfig": "^0.0.1",
+    "eslint": "^8.51.0"
+  }
+}
