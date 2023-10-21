@@ -1,12 +1,21 @@
 # Hatsu Serve
 
-Server-side middleware for automated request forwarding to Hatsu instance. [WIP]
+Server-side middleware for automated request forwarding to [Hatsu](https://github.com/importantimport/hatsu) instance. [WIP]
+
+## Why
+
+Hatsu requires the target site to redirects `.well-known`.
+
+While you can do this by setting `_redirects`, `netlify.toml`, or `vercel.json`, Hatsu Serve can go further:
+
+- Automatically redirects `.well-known`
+- Automatically redirects to Hatsu object when Request Header `Accept` include `application/activity+json` (AS2) or `application/ld+json` (JSON-LD)
 
 ## Packages / Modules
 
-### Deno
+### [Deno](/deno/)
 
-#### Lume [WIP]
+#### [Lume](/deno/lume/) [WIP]
 
 ```jsonc
 // import_map.json
@@ -33,7 +42,7 @@ server.use(hatsuServe({ to: new URL('https://hatsu.local') }))
 server.start()
 ```
 
-#### Hono [WIP]
+#### [Hono](/deno/hono/) [WIP]
 
 ```jsonc
 // import_map.json
